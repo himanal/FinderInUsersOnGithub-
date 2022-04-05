@@ -1,14 +1,23 @@
+// Dependencies
+import { BrowserRouter as Router, Route } from "react-router-dom"
 
+// component
+import  Navbar  from "./component/layout/Navbar";
+import Footer from "./component/layout/Footer";
 
 
 function App() {
   return (
-    <div className="bg-green-400">
-    <h1 className="text-2xl">
-      hello
-      </h1>  
-     
-    </div>
+    <Router>
+      <div className=" flex flex-col   h-screen ">
+
+      <Navbar/>
+      
+      <Footer/>
+      
+      
+      </div>
+    </Router>
   );
 }
 
