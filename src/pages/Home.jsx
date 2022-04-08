@@ -1,8 +1,10 @@
-import React from 'react'
-
+// componenet
+import UsersResult from "../component/users/UsersResult"
 function Home() {
   return (
-    <div className='text-8xl'>Home</div>
+    < >
+      <UsersResult/>
+    </>
   )
 }
 
