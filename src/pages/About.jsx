@@ -2,7 +2,7 @@
 import { VscGithub } from "react-icons/vsc"
 
 // dependencies
-import HimanalQRcode from "../puplic/HimanalQRcode.svg"
+import HimanalQRcode from "../assest/HimanalQRcode.svg"
 
 import React from 'react'
 
