@@ -1,4 +1,6 @@
-import {  createContext, useState } from "react";
+import {  createContext, useReducer } from "react";
+import GithubReducer from "./GithubReducer";
+
 import axios from "axios";
 
 const GithubContext = createContext()
@@ -9,12 +11,16 @@ const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN
 
 export const GithubProvider=({children})=>{
 
-    const [users, setUsers]=useState([])
-    const [Loading, setLoading]=useState(true)
+   const initialState ={
+       users :[],
+       Loading:true
+   }
+
+   const [ state ,dispatch]= useReducer(GithubReducer,initialState)
 
     const fetchData=async()=>{
         console.log("log")
-        const respone= await axios.get(`${GITHUB_URL}users`,{
+        const respone= await axios.get(`${GITHUB_URL}users`,{ 
             headers:{
                 Authorization: `token${GITHUB_TOKEN}`
             }
@@ -23,14 +29,16 @@ export const GithubProvider=({children})=>{
          const data = await respone.data
        
             
-      setUsers(data)
-      setLoading(false)
+     dispatch({
+         type: 'GIT_USERS',
+         payload: data,
+     })
       console.log(data)
       
     }
     return <GithubContext.Provider value={{
-        users,
-        Loading,
+        users: state.users,
+        Loading: state.Loading,
         fetchData
          }}>
         {children}

@@ -16,7 +16,7 @@ function App() {
     <Router>
       <div className=" flex flex-col bg-slate-600    ">
       <Navbar/>
-      <main className="  min-h-max  my-auto px-2">
+      <main className="  my-auto px-2">
       <Routes>
         <Route path="/" element={ <Home />}/>
         <Route path="/about" element={  <About/>}/>
