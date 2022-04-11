@@ -5,8 +5,18 @@ const GithubReducer = ( state , action)=>{
              ...state,
              users :action.payload,
              Loading:false    
-            }
-        
+            };
+        case 'GET_LOADING':
+            return{
+                ...state,
+                Loading:true
+            }    
+
+         case 'DELETE_DATA':
+             return{
+                 users:[],
+                 Loading:false
+             }   
         default:
             return state
     }
