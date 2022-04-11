@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import AlertContext from '../../context/alret/AlertContext'
 import GithubContext from '../../context/Github/GithubContext'
 
 function UserSreach() {
@@ -7,11 +8,12 @@ function UserSreach() {
   const handlechange = (e)=>setText(e.target.value)
 
   const{users,searchData,clearData }=useContext(GithubContext)
+  const { setAlert}= useContext( AlertContext)
 
   const handleSubmit =(e)=>{
     e.preventDefault()
     if( text === ""){
-      alert("please enter somting")
+      setAlert("please enter somting","error")
     } else{
       searchData(text)
 
