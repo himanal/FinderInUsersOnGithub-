@@ -17,8 +17,8 @@ function UsersResult({children}) {
     if(!Loading){
       return (
       
-        <div className=" grid grid-cols-5  w-[100vw-5%]  text-xl gap-3 overflow-scroll ">{users.map((user)=>(
-          <h3 className="ring-2 p-2 h-24 rounded duration-500 shadow-lg mb-12 shadow-slate-500 m-2 hover:scale-110">
+        <div className=" grid grid-cols-5  w-[100vw-5%]  text-xl gap-3 overflow-scroll  ">{users.map((user)=>(
+          <h3 className="ring-2 p-2 h-24 rounded duration-500 shadow-lg mb-12 shadow-slate-500 delay-300 m-2 hover:scale-110">
            <UserList key={user.id} user={user}/>
           </h3>
         ))}</div>

@@ -18,6 +18,12 @@ const GithubReducer = ( state , action)=>{
                 ...state,
                 Loading:true
             }    
+        case 'GET_USER_REPOS':
+            return{
+                ...state,
+                repos:action.payload,
+                Loading:true
+            }    
 
          case 'DELETE_DATA':
              return{
